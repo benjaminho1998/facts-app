@@ -1,9 +1,7 @@
 import React from 'react';
-import './App.css';
 import axios from 'axios';
-import Cat from './components/cat-facts';
 
-class App extends React.Component {
+class Cat extends React.Component {
   constructor(props) {
     super(props);
 
@@ -22,10 +20,12 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Cat />
+        {this.state.fact}
+        <br></br>
+        <button onClick={this.handleClick}>Give me a fact!</button>
       </div>
     );
   }
 }
 
-export default App;
+export default Cat;
