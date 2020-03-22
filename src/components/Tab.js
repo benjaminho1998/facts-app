@@ -8,8 +8,16 @@ class Tab extends React.Component {
     super(props);
 
     this.state = {
-      'fact': ''
+      'fact': '',
     };
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.tab) {
+      this.setState({
+        'fact': ''
+      });
+    }
   }
 
   handleClick = () => {
@@ -33,10 +41,9 @@ class Tab extends React.Component {
         <div className="fact">
           {this.state.fact}
         </div>
-        <br></br>
-    <Button className="button" size="lg" variant="outline-dark" onClick={this.handleClick}>
-      {this.props.tab === "kanye" ? 'Give me a quote!': 'Give me a fact!'}
-    </Button>
+        <Button className="button" size="lg" variant="outline-dark" onClick={this.handleClick}>
+          {this.props.tab === "kanye" ? 'Give me a quote!': 'Give me a fact!'}
+        </Button>
       </div>
     );
   }

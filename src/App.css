@@ -14,6 +14,7 @@ body,html {
   height: 100vh;
   width: 100%;
   position: relative;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .container-2 {
@@ -31,4 +32,8 @@ body,html {
   color: black;
   border-radius: 25px;
   padding-top: 0.02em;
+}
+
+.initial-page {
+  color: red;
 }

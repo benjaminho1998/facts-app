@@ -1,3 +1,8 @@
 .fact {
-    font-size: 2em;
+    font-size: 1.5em;
+    text-align: left;
+}
+
+.button {
+    margin-top: 1em;
 }

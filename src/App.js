@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Tab from './components/Tab';
-import Test from './components/Test';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,12 +13,12 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      'refresh': false
+      'first': true
     }
   }
 
   handleClick = () => {
-    this.setState({'refresh': true})
+    this.setState({'first': false});
   }
 
   render() {
@@ -27,10 +26,9 @@ class App extends React.Component {
       <Router className="route">
         <div className="container">
           <span className="header">
-            <NavLink activeStyle={{ color: 'red' }} to="/cats" className="link">Cats</NavLink>
-            <NavLink activeStyle={{ color: 'red' }} to="/pandas" className="link-margin link">Pandas</NavLink>
-            <NavLink activeStyle={{ color: 'red' }} to="/kanye" className="link-margin link">Kanye</NavLink>
-            <NavLink activeStyle={{ color: 'red' }} to="/kl" className="link-margin link">Test</NavLink>
+            <NavLink activeStyle={{ color: 'red' }} to='/cats' className={`link ${this.state.first ? "initial-page" : ""}`}>Cats</NavLink>
+            <NavLink onClick={this.handleClick} activeStyle={{ color: 'red' }} to='/pandas' className="link-margin link">Pandas</NavLink>
+            <NavLink onClick={this.handleClick} activeStyle={{ color: 'red' }} to='/kanye' className="link-margin link">Kanye</NavLink>
           </span>
           <div className="container-2">
           <Switch>
@@ -45,9 +43,6 @@ class App extends React.Component {
             </Route>
             <Route path="/pandas">
               <Tab tab="pandas" url="/pandas"/>
-            </Route>
-            <Route>
-              <Test/>
             </Route>
           </Switch>
           </div>
