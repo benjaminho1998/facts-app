@@ -15,4 +15,4 @@ A web app that generates facts on cats or pandas, or quotes by Kanye.
 3. Run `npm start`
 
 ### How to use
-Click on Cats, Pandas, or Kanye to set the setting. Default is Cats.
+Click on Cats, Pandas, or Kanye to set the setting. Default is Cats. Then click on the button to generate a fact or quote!
