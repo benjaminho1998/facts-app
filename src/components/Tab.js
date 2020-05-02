@@ -7,11 +7,13 @@ class Tab extends React.Component {
   constructor(props) {
     super(props);
 
+    //Fact to be displayed on the web app
     this.state = {
-      'fact': '',
+      'fact': ''
     };
   }
 
+  //Refreshes fact when user clicks on another tab
   componentWillReceiveProps(nextProps) {
     if (nextProps.tab) {
       this.setState({
@@ -20,6 +22,7 @@ class Tab extends React.Component {
     }
   }
 
+  //Calls one of the three API's depending on what the user wants, and then sets the state variable
   handleClick = () => {
     axios.get(this.props.url)
       .then(res => {
@@ -35,6 +38,7 @@ class Tab extends React.Component {
       })
   }
 
+  //Sets up the fact UI
   render() {
     return (
       <div>

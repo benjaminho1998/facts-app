@@ -13,7 +13,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      'first': true
+      'first': true //Used to update CSS appropriately and re-render component
     }
   }
 
@@ -21,6 +21,8 @@ class App extends React.Component {
     this.setState({'first': false});
   }
 
+
+  //Sets up header UI
   render() {
     return (
       <Router className="route">
