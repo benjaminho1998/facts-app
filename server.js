@@ -1,8 +1,8 @@
 const express = require('express');
-// const request = require('request');
 const axios = require('axios');
+const app = express(); 
 
-const app = express();
+//Set up Express/Node.js proxy backend to receive API requests from the front end, and then call the Panda API to get around the CORS restrictions
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
