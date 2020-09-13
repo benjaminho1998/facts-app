@@ -10,10 +10,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname+'/bin/index.html'); 
-});
-
 app.get('/pandas', (req, res) => {
   axios.get('https://some-random-api.ml/facts/panda')
     .then(response => {
